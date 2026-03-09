@@ -14,15 +14,16 @@ interface RabbitTeethRatingProps {
 const Tooth = ({ filled, half, className }: { filled: boolean; half?: boolean; className?: string }) => {
     return (
         <div className={cn("relative inline-block", className)}>
-            {/* Empty Tooth (Outline) */}
+            {/* Background (Empty Tooth) - Refined Rounded Rectangle */}
             <svg
                 viewBox="0 0 24 24"
-                className="h-full w-full fill-muted/30 stroke-muted-foreground/30 stroke-2"
+                className="h-full w-full fill-zinc-200 dark:fill-zinc-800 transition-colors"
             >
-                <path d="M6 2h12v14c0 4-3 6-6 6s-6-2-6-6V2z" />
+                <rect x="6" y="2" width="12" height="18" rx="2" />
+                <path d="M6 16c0 2 3 4 6 4s6-2 6-4" fill="none" strokeWidth="1" className="stroke-zinc-300 dark:stroke-zinc-700" />
             </svg>
 
-            {/* Filled Tooth Overlay */}
+            {/* Filled Overlay */}
             {(filled || half) && (
                 <div
                     className="absolute inset-0 overflow-hidden"
@@ -30,10 +31,10 @@ const Tooth = ({ filled, half, className }: { filled: boolean; half?: boolean; c
                 >
                     <svg
                         viewBox="0 0 24 24"
-                        className="h-full w-[100/width] fill-primary stroke-primary stroke-2"
+                        className="h-full w-[100/width] fill-primary"
                         style={{ width: half ? "200%" : "100%" }}
                     >
-                        <path d="M6 2h12v14c0 4-3 6-6 6s-6-2-6-6V2z" />
+                        <rect x="6" y="2" width="12" height="18" rx="2" />
                     </svg>
                 </div>
             )}
@@ -49,13 +50,13 @@ export const RabbitTeethRating: React.FC<RabbitTeethRatingProps> = ({
     showNumber = true,
 }) => {
     const sizeClasses = {
-        sm: "h-3 w-2.5 mx-0.5",
-        md: "h-6 w-5 mx-0.5",
-        lg: "h-8 w-6.5 mx-1",
+        sm: "h-3.5 w-2 mx-[1px]",
+        md: "h-6 w-3.5 mx-[2px]",
+        lg: "h-8 w-5 mx-[3px]",
     };
 
     return (
-        <div className={cn("flex items-center", className)} aria-label={`Rating: ${rating} out of ${maxRating}`}>
+        <div className={cn("inline-flex items-center", className)} aria-label={`Rating: ${rating} out of ${maxRating}`}>
             <div className="flex">
                 {Array.from({ length: maxRating }).map((_, i) => {
                     const fullAmount = i + 1;
@@ -73,7 +74,7 @@ export const RabbitTeethRating: React.FC<RabbitTeethRatingProps> = ({
                 })}
             </div>
             {showNumber && (
-                <span className="ml-2 text-sm font-semibold text-foreground/80">
+                <span className="ml-3 text-sm font-bold tracking-tighter text-foreground/70">
                     {rating.toFixed(1)}
                 </span>
             )}

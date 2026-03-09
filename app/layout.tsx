@@ -1,28 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Cormorant_Garamond } from "next/font/google";
 import { Navbar } from "@/components/layout/navbar";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: "LebreBites | Gastronomia de Elite para os Exigentes",
-  description: "A maior comunidade de reviews gastronómicas focadas em pratos icónicos. Descobre os melhores restaurantes, rankings de sobremesas, pastas e muito mais. Onde cada dentinho conta.",
+  title: "LebreBites | Gastronomia & Roteiros",
+  description: "Críticas para paladares exigentes. A maior comunidade de reviews gastronómicas focadas em pratos icónicos.",
   keywords: ["gastronomia", "reviews", "restaurantes", "pratos", "michelin", "lebrebites"],
-  openGraph: {
-    title: "LebreBites | Gastronomia de Elite",
-    description: "A plataforma para quem leva a comida a sério.",
-    type: "website",
-    locale: "pt_PT",
-  }
 };
 
 export default function RootLayout({
@@ -31,10 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="pt">
+      <body className={`${inter.variable} ${cormorant.variable} font-sans antialiased bg-background`}>
         <Navbar />
         {children}
       </body>
