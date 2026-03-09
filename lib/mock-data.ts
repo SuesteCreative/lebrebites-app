@@ -66,14 +66,14 @@ export const RESTAURANTS: Restaurant[] = [
     },
     {
         id: "r3",
-        name: "Padaria Lisboa Doce",
-        slug: "lisboa-doce",
-        city: "Lisboa",
-        cuisine: "Pastelaria Tradicional",
+        name: "Os Sogros",
+        slug: "os-sogros",
+        city: "Algarve",
+        cuisine: "Tradicional Regional",
         priceRange: "$$$",
-        rating: 4.9,
-        image: "/images/pastelnata.png",
-        description: "Onde o açúcar encontra a arte.",
+        rating: 4.7,
+        image: "/images/chanfana.png",
+        description: "A essência da cozinha algarvia de interior com sabores fortes e genuínos.",
     },
     {
         id: "r4",
@@ -165,11 +165,11 @@ export const DISHES: Dish[] = [
     {
         id: "d3",
         restaurantId: "r3",
-        name: "Pastel de Nata Premium",
-        category: "dessert",
-        rating: 4.9,
-        image: "/images/pastelnata.png",
-        description: "O segredo está na massa folhada e no creme perfeito.",
+        name: "Chanfana Algarvia",
+        category: "main",
+        rating: 4.7,
+        image: "/images/chanfana.png",
+        description: "Carne tenra cozinhada lentamente em vinho tinto e especiarias da serra.",
     },
 ];
 
