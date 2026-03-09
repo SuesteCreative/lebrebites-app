@@ -48,22 +48,26 @@ export const Navbar = ({ className }: { className?: string }) => {
             )}>
                 <div className="flex items-center gap-12">
                     <Link href="/" className="flex items-center gap-4 group">
-                        <div className="relative w-12 h-12 md:w-14 md:h-14 overflow-hidden rounded-xl md:rounded-2xl bg-black transition-transform duration-500 group-hover:scale-105">
+                        <div className="relative w-12 h-12 md:w-14 md:h-14 overflow-hidden rounded-xl md:rounded-2xl bg-white dark:bg-zinc-900 border border-black/5 flex items-center justify-center p-2 transition-transform duration-500 group-hover:scale-105">
                             <Image
-                                src="/images/logo.png"
-                                alt="LebreBites Logo"
-                                fill
-                                className="object-cover"
+                                src="/images/rabbit_only.png"
+                                alt="LebreBites Rabbit"
+                                width={100}
+                                height={100}
+                                className="object-contain"
                             />
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-xl md:text-2xl font-black tracking-tighter uppercase whitespace-nowrap leading-none flex items-center">
+                            <span className="text-xl md:text-2xl font-black tracking-tighter uppercase whitespace-nowrap leading-none flex items-center text-primary">
                                 LEBREBITE<span className="relative">
                                     S
-                                    <span className="absolute -top-[3px] -right-[3px] flex gap-[1px]">
-                                        <span className="w-2.5 h-2.5 bg-white dark:bg-black rounded-full" />
-                                        <span className="w-2 h-2 bg-white dark:bg-black rounded-full mt-1 -ml-1" />
-                                    </span>
+                                    {/* Bite Mark - Refined Jagged Shape */}
+                                    <svg viewBox="0 0 10 10" className="absolute -top-[2px] -right-[2px] w-4 h-4 fill-white dark:fill-zinc-950 pointer-events-none">
+                                        <path d="M10 0 C 8 0, 7 2, 5 1 C 3 0, 2 2, 0 0 L 10 0 Z" />
+                                        <circle cx="2" cy="1" r="1.5" />
+                                        <circle cx="5" cy="2" r="1.8" />
+                                        <circle cx="8" cy="1.2" r="1.5" />
+                                    </svg>
                                 </span>
                             </span>
                         </div>
@@ -106,13 +110,15 @@ export const Navbar = ({ className }: { className?: string }) => {
                 >
                     <div className="flex justify-between items-center mb-20">
                         <div className="flex flex-col">
-                            <span className="text-2xl font-black tracking-tighter uppercase whitespace-nowrap leading-none flex items-center">
+                            <span className="text-2xl font-black tracking-tighter uppercase whitespace-nowrap leading-none flex items-center text-primary">
                                 LEBREBITE<span className="relative">
                                     S
-                                    <span className="absolute -top-[4px] -right-[4px] flex gap-[1.5px]">
-                                        <span className="w-3 h-3 bg-white dark:bg-black rounded-full" />
-                                        <span className="w-2.5 h-2.5 bg-white dark:bg-black rounded-full mt-1.5 -ml-1.5" />
-                                    </span>
+                                    <svg viewBox="0 0 10 10" className="absolute -top-[3px] -right-[3px] w-5 h-5 fill-white dark:fill-zinc-950 pointer-events-none">
+                                        <path d="M10 0 C 8 0, 7 2, 5 1 C 3 0, 2 2, 0 0 L 10 0 Z" />
+                                        <circle cx="2" cy="1" r="1.5" />
+                                        <circle cx="5" cy="2" r="1.8" />
+                                        <circle cx="8" cy="1.2" r="1.5" />
+                                    </svg>
                                 </span>
                             </span>
                         </div>

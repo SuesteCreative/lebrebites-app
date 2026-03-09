@@ -86,13 +86,13 @@ export const HeroSection = () => {
                 </div>
 
                 <div className="reveal-btns flex flex-wrap justify-center gap-6">
-                    <Link href="/top-dishes">
-                        <Button size="lg" className="h-16 rounded-full px-12 text-lg font-bold bg-white text-black hover:bg-white/90">
+                    <Link href="/top-dishes" className="cursor-pointer">
+                        <Button size="lg" className="h-16 rounded-full px-12 text-lg font-bold bg-white text-black hover:bg-white/90 cursor-pointer">
                             Explorar Pratos
                         </Button>
                     </Link>
-                    <Link href="/explore">
-                        <Button size="lg" variant="outline" className="h-16 rounded-full px-12 text-lg font-bold text-white border-white/60 bg-white/10 backdrop-blur-md hover:bg-white/20 uppercase tracking-widest">
+                    <Link href="/explore" className="cursor-pointer">
+                        <Button size="lg" variant="outline" className="h-16 rounded-full px-12 text-lg font-bold text-white border-white/60 bg-white/10 backdrop-blur-md hover:bg-white/20 uppercase tracking-widest cursor-pointer">
                             Guia Premium
                         </Button>
                     </Link>
