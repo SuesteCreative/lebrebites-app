@@ -1,0 +1,116 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String    @id @default(cuid())
+  username   String    @unique
+  email      String    @unique
+  avatar     String?
+  bio        String?
+  createdAt  DateTime  @default(now()) @map("created_at")
+  reviews    Review[]
+  followers  Follower[] @relation("following")
+  following  Follower[] @relation("follower")
+  bookmarks  Bookmark[]
+
+  @@map("users")
+}
+
+model Restaurant {
+  id           String    @id @default(cuid())
+  name         String
+  slug         String    @unique
+  city         String
+  country      String
+  address      String
+  lat          Float?
+  lng          Float?
+  cuisineType  String    @map("cuisine_type")
+  priceRange   String    @map("price_range")
+  image        String?
+  dishes       Dish[]
+  reviews      Review[]
+  createdAt    DateTime  @default(now()) @map("created_at")
+
+  @@map("restaurants")
+}
+
+model Dish {
+  id           String       @id @default(cuid())
+  restaurantId String       @map("restaurant_id")
+  restaurant   Restaurant   @relation(fields: [restaurantId], references: [id])
+  name         String
+  slug         String       @unique
+  description  String?
+  image        String?
+  reviews      ReviewDish[]
+  createdAt    DateTime     @default(now()) @map("created_at")
+
+  @@map("dishes")
+}
+
+model Review {
+  id           String    @id @default(cuid())
+  userId       String    @map("user_id")
+  user         User      @relation(fields: [userId], references: [id])
+  restaurantId String?   @map("restaurant_id")
+  restaurant   Restaurant? @relation(fields: [restaurantId], references: [id])
+  rating       Float
+  foodQuality  Float     @map("food_quality")
+  presentation Float
+  service      Float
+  atmosphere   Float
+  value        Float
+  text         String?
+  visitDate    DateTime? @map("visit_date")
+  createdAt    DateTime  @default(now()) @map("created_at")
+  dishes       ReviewDish[]
+
+  @@map("reviews")
+}
+
+model ReviewDish {
+  id       String @id @default(cuid())
+  reviewId String @map("review_id")
+  review   Review @relation(fields: [reviewId], references: [id])
+  dishId   String @map("dish_id")
+  dish     Dish   @relation(fields: [dishId], references: [id])
+  rating   Float
+
+  @@map("review_dishes")
+}
+
+model Follower {
+  id          String @id @default(cuid())
+  followerId  String @map("follower_id")
+  follower    User   @relation("follower", fields: [followerId], references: [id])
+  followingId String @map("following_id")
+  following   User   @relation("following", fields: [followingId], references: [id])
+
+  @@unique([followerId, followingId])
+  @@map("followers")
+}
+
+model Bookmark {
+  id           String      @id @default(cuid())
+  userId       String      @map("user_id")
+  user         User        @relation(fields: [userId], references: [id])
+  restaurantId String?     @map("restaurant_id")
+  dishId       String?     @map("dish_id")
+  createdAt    DateTime    @default(now()) @map("created_at")
+
+  @@unique([userId, restaurantId, dishId])
+  @@map("bookmarks")
+}
