@@ -20,6 +20,8 @@ export interface Restaurant {
     description: string;
     phone?: string;
     mapIframe?: string;
+    isExclusive?: boolean;
+    exclusiveDetails?: string;
 }
 
 export interface Dish {
@@ -70,10 +72,12 @@ export const RESTAURANTS: Restaurant[] = [
         slug: "os-sogros",
         city: "Algarve",
         cuisine: "Tradicional Regional",
-        priceRange: "$$$",
+        priceRange: "$$$$$",
         rating: 4.7,
         image: "/images/chanfana.png",
         description: "A essência da cozinha algarvia de interior com sabores fortes e genuínos.",
+        isExclusive: true,
+        exclusiveDetails: "Apenas por convite. 1x por ano em Dezembro.",
     },
     {
         id: "r4",
