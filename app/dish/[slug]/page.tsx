@@ -9,11 +9,12 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Utensils, Award, Share2, Bookmark, ArrowLeft, Phone } from "lucide-react";
 import { TOP_DISHES, RESTAURANTS } from "@/lib/mock-data";
 
-export default function DishDetailPage({ params }: { params: { slug: string } }) {
+export default function DishDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = React.use(params);
     const containerRef = useRef<HTMLDivElement>(null);
 
     // Find dish from mock or default to first one
-    const dish = TOP_DISHES.find(d => d.id === params.slug) || TOP_DISHES[0];
+    const dish = TOP_DISHES.find(d => d.id === slug) || TOP_DISHES[0];
 
     useGSAP(() => {
         const tl = gsap.timeline({ defaults: { ease: "power4.out" } });

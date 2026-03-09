@@ -9,11 +9,12 @@ import { gsap, useGSAP } from "@/lib/gsap-setup";
 import { RESTAURANTS, TOP_DISHES } from "@/lib/mock-data";
 import { MapPin, Star, Clock, ArrowRight, Phone, Lock, X, HelpCircle, AlertCircle } from "lucide-react";
 
-export default function RestaurantDetailPage({ params }: { params: { slug: string } }) {
+export default function RestaurantDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = React.use(params);
     const containerRef = useRef<HTMLDivElement>(null);
     const [showPaywall, setShowPaywall] = useState(false);
 
-    const restaurant = RESTAURANTS.find(r => r.slug === params.slug) || RESTAURANTS[0];
+    const restaurant = RESTAURANTS.find(r => r.slug === slug) || RESTAURANTS[0];
     const restaurantDishes = TOP_DISHES.filter(d => d.restaurantId === restaurant.id);
 
     useGSAP(() => {
