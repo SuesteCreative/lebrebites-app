@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import Link from "next/link";
 import { WORST_DISHES, RESTAURANTS } from "@/lib/mock-data";
 import { gsap, useGSAP } from "@/lib/gsap-setup";
+import { ThumbsDown } from "lucide-react";
 
 export const WorstDishesSection = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -40,6 +41,11 @@ export const WorstDishesSection = () => {
                         <p className="text-xl text-zinc-400 max-w-xl font-serif italic">
                             "Nem tudo o que brilha é ouro. Aqui exponho as experiências que nunca deveriam ter saído da cozinha."
                         </p>
+                    </div>
+
+                    <div className="flex flex-col items-end gap-2 opacity-20 hidden md:flex">
+                        <ThumbsDown className="w-20 h-20" />
+                        <span className="text-[10px] font-black uppercase tracking-[0.5em]">Evitar a todo o custo</span>
                     </div>
                 </div>
 
