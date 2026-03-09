@@ -18,6 +18,8 @@ export interface Restaurant {
     rating: number;
     image: string;
     description: string;
+    phone?: string;
+    mapIframe?: string;
 }
 
 export interface Dish {
@@ -40,14 +42,16 @@ export const CRITIC = {
 export const RESTAURANTS: Restaurant[] = [
     {
         id: "r1",
-        name: "Tasca do Zé",
-        slug: "tasca-do-ze",
+        name: "Restaurante Os Amigos",
+        slug: "os-amigos",
         city: "Lisboa",
-        cuisine: "Portuguesa Contemporânea",
+        cuisine: "Portuguesa Tradicional",
         priceRange: "$$$",
         rating: 4.8,
         image: "/images/hero_dish.png",
-        description: "Um clássico reinventado no coração de Alfama.",
+        description: "Um tesouro escondido com comida caseira autêntica.",
+        phone: "211346101",
+        mapIframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4786.947833789703!2d-9.1297429!3d38.7193071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19338eb2ad7285%3A0x7c6d2f20c7fc2d0d!2sRestaurante%20Os%20Amigos!5e1!3m2!1spt-PT!2spt!4v1773096520271!5m2!1spt-PT!2spt",
     },
     {
         id: "r2",
@@ -143,11 +147,11 @@ export const DISHES: Dish[] = [
     {
         id: "d1",
         restaurantId: "r1",
-        name: "Mousse de Chocolate",
+        name: "Mousse de Chocolate Caseira",
         category: "dessert",
         rating: 4.8,
         image: "/images/mousse.png",
-        description: "Textura aveludada com um toque de flor de sal.",
+        description: "Receita caseira tradicional, densa e cheia de sabor.",
     },
     {
         id: "d2",

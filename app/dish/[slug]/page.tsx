@@ -6,8 +6,8 @@ import Link from "next/link";
 import { RabbitTeethRating } from "@/components/ui/rabbit-teeth-rating";
 import { gsap, useGSAP } from "@/lib/gsap-setup";
 import { Button } from "@/components/ui/button";
-import { MapPin, Utensils, Award, Share2, Bookmark, ArrowLeft } from "lucide-react";
-import { TOP_DISHES } from "@/lib/mock-data";
+import { MapPin, Utensils, Award, Share2, Bookmark, ArrowLeft, Phone } from "lucide-react";
+import { TOP_DISHES, RESTAURANTS } from "@/lib/mock-data";
 
 export default function DishDetailPage({ params }: { params: { slug: string } }) {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -161,10 +161,15 @@ export default function DishDetailPage({ params }: { params: { slug: string } })
                     <div className="p-8 rounded-[2.5rem] bg-zinc-950 text-white space-y-8 sticky top-32">
                         <div className="space-y-4">
                             <h3 className="text-xl font-bold uppercase tracking-widest text-primary italic">Reserva já</h3>
-                            <p className="text-zinc-400">Este restaurante costuma ter listas de espera de 2 semanas para pratos específicos.</p>
-                            <Button className="w-full h-16 rounded-full bg-white text-black font-black uppercase tracking-widest hover:bg-zinc-200">
-                                Contactar Restaurante
-                            </Button>
+                            <p className="text-zinc-400">Este restaurante é muito concorrido. Recomendamos reservar com antecedência.</p>
+                            {dish.restaurantId && (
+                                <a
+                                    href={`tel:${RESTAURANTS.find(r => r.id === dish.restaurantId)?.phone || "211346101"}`}
+                                    className="flex items-center justify-center w-full h-16 rounded-full bg-white text-black font-black uppercase tracking-widest hover:bg-zinc-200 transition-colors"
+                                >
+                                    Contactar Restaurante
+                                </a>
+                            )}
                         </div>
 
                         <div className="h-px w-full bg-white/10" />
@@ -174,10 +179,23 @@ export default function DishDetailPage({ params }: { params: { slug: string } })
                                 <span className="text-xs font-bold uppercase tracking-widest opacity-50">Localização</span>
                                 <span className="text-xs font-bold uppercase tracking-widest text-primary">Ver Mapa</span>
                             </div>
-                            <div className="w-full aspect-video bg-zinc-800 rounded-2xl flex items-center justify-center text-xs opacity-30 italic">
-                                Interactive Map Loading...
+                            <div className="w-full aspect-video bg-zinc-900 rounded-2xl overflow-hidden border border-white/5">
+                                {RESTAURANTS.find(r => r.id === dish.restaurantId)?.mapIframe ? (
+                                    <iframe
+                                        src={RESTAURANTS.find(r => r.id === dish.restaurantId)?.mapIframe}
+                                        width="100%"
+                                        height="100%"
+                                        style={{ border: 0 }}
+                                        allowFullScreen
+                                        loading="lazy"
+                                    />
+                                ) : (
+                                    <div className="w-full h-full flex items-center justify-center text-xs opacity-30 italic">
+                                        Mapa INDISPONÍVEL
+                                    </div>
+                                )}
                             </div>
-                            <p className="text-sm font-medium">Rua da Gastronomia de Elite, 12, {dish.city}</p>
+                            <p className="text-sm font-medium">{dish.city}, Portugal</p>
                         </div>
                     </div>
                 </div>
