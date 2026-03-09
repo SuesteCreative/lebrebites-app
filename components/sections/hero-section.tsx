@@ -77,10 +77,12 @@ export const HeroSection = () => {
                     </h1>
 
                     <div className="hero-text-item space-y-2">
-                        <p className="text-xl md:text-2xl text-white/70 max-w-2xl font-medium leading-relaxed">
-                            Reviews gastronómicas para quem leva a comida a sério. Descobre as
-                            pérolas escondidas e os pratos icónicos dos melhores chefs do mundo.
-                            Onde cada detalhe, e cada dentinho, conta.
+                        <p className="text-xl md:text-2xl text-white/70 max-w-2xl font-medium leading-relaxed italic">
+                            "Críticas para paladares exigentes"
+                        </p>
+                        <p className="text-lg text-white/50 max-w-2xl font-normal leading-relaxed">
+                            Descobre as pérolas escondidas e os pratos icónicos dos melhores chefs.
+                            Onde cada detalhe conta.
                         </p>
                         <div className="flex items-center gap-4 mt-6">
                             <span className="text-sm font-bold uppercase tracking-widest text-white/40">Rating Popular:</span>

@@ -27,6 +27,10 @@ export const Navbar = ({ className }: { className?: string }) => {
                     <span className="text-2xl font-black tracking-tighter uppercase whitespace-nowrap">
                         Lebre<span className="text-primary italic">Bites</span>
                     </span>
+                    <div className="h-4 w-px bg-foreground/20 hidden md:block" />
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-40 hidden md:block whitespace-nowrap">
+                        Gastronomia & Roteiros
+                    </span>
                 </Link>
                 <div className="hidden lg:flex items-center gap-8 text-sm font-semibold tracking-wide uppercase opacity-70">
                     <Link href="/explore" className="hover:opacity-100 transition-opacity">Explore</Link>
