@@ -126,6 +126,17 @@ export const RESTAURANTS: Restaurant[] = [
         image: "/images/hero_dish.png",
         description: "A alma alentejana servida ao balcão em Belém.",
     },
+    {
+        id: "r_marisqueira_rui",
+        name: "Marisqueira Rui",
+        slug: "marisqueira-rui",
+        city: "Silves",
+        cuisine: "Marisqueira",
+        priceRange: "$$$$",
+        rating: 4.3,
+        image: "/images/lisbon1.png",
+        description: "Famosa pelos mariscos, mas com deslizes imperdoáveis nos básicos.",
+    },
 ];
 
 export const DISHES: Dish[] = [
@@ -155,6 +166,27 @@ export const DISHES: Dish[] = [
         rating: 4.9,
         image: "/images/pastelnata.png",
         description: "O segredo está na massa folhada e no creme perfeito.",
+    },
+];
+
+export const WORST_DISHES: Dish[] = [
+    {
+        id: "wd1",
+        restaurantId: "r_marisqueira_rui",
+        name: "Papo-seco torrado com maionese",
+        category: "starter",
+        rating: 0.5,
+        image: "/images/worst_dish_bread.png",
+        description: "Um insulto ao paladar. Pão frouxo, maionese de supermercado e uma falta de critérios gritante.",
+    },
+    {
+        id: "wd2",
+        restaurantId: "r_bad_1",
+        name: "Arroz de Marisco Congelado",
+        category: "main",
+        rating: 1.0,
+        image: "/images/hero_dish.png",
+        description: "Textura de borracha e sabor a cloro. Uma experiência a esquecer.",
     },
 ];
 

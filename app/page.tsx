@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/sections/hero-section";
 import { LisbonReviewsSection } from "@/components/sections/lisbon-reviews";
+import { WorstDishesSection } from "@/components/sections/worst-dishes";
 import { TOP_DISHES } from "@/lib/mock-data";
 import Link from "next/link";
 
@@ -51,6 +52,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <WorstDishesSection />
     </main>
   );
 }
