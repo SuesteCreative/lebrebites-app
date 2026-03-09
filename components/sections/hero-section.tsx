@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap-setup";
 import { RabbitTeethRating } from "@/components/ui/rabbit-teeth-rating";
@@ -85,12 +86,16 @@ export const HeroSection = () => {
                 </div>
 
                 <div className="reveal-btns flex flex-wrap justify-center gap-6">
-                    <Button size="lg" className="h-16 rounded-full px-12 text-lg font-bold bg-white text-black hover:bg-white/90">
-                        Explorar Pratos
-                    </Button>
-                    <Button size="lg" variant="outline" className="h-16 rounded-full px-12 text-lg font-bold text-white border-white/30 backdrop-blur-md hover:bg-white/10 uppercase tracking-widest">
-                        Guia Premium
-                    </Button>
+                    <Link href="/top-dishes">
+                        <Button size="lg" className="h-16 rounded-full px-12 text-lg font-bold bg-white text-black hover:bg-white/90">
+                            Explorar Pratos
+                        </Button>
+                    </Link>
+                    <Link href="/explore">
+                        <Button size="lg" variant="outline" className="h-16 rounded-full px-12 text-lg font-bold text-white border-white/60 bg-white/10 backdrop-blur-md hover:bg-white/20 uppercase tracking-widest">
+                            Guia Premium
+                        </Button>
+                    </Link>
                 </div>
 
                 {/* Coordinated Stats */}
