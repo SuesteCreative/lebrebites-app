@@ -147,7 +147,30 @@ export const DISHES: Dish[] = [
         image: "/images/carbonara.png",
         description: "Sem natas, apenas gema, pecorino e paixão.",
     },
+    {
+        id: "d3",
+        restaurantId: "r3",
+        name: "Pastel de Nata Premium",
+        category: "dessert",
+        rating: 4.9,
+        image: "/images/pastelnata.png",
+        description: "O segredo está na massa folhada e no creme perfeito.",
+    },
 ];
+
+export interface TopDish extends Dish {
+    restaurant: string;
+    city: string;
+}
+
+export const TOP_DISHES: TopDish[] = DISHES.map(dish => {
+    const restaurant = RESTAURANTS.find(r => r.id === dish.restaurantId);
+    return {
+        ...dish,
+        restaurant: restaurant?.name || "Desconhecido",
+        city: restaurant?.city || "Portugal",
+    };
+});
 
 export const FEED_ACTIVITIES = [
     {
@@ -193,3 +216,4 @@ export const FEED_ACTIVITIES = [
         image: "/images/carbonara.png",
     },
 ];
+

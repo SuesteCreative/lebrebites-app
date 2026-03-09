@@ -1,5 +1,7 @@
 import { HeroSection } from "@/components/sections/hero-section";
 import { LisbonReviewsSection } from "@/components/sections/lisbon-reviews";
+import { TOP_DISHES } from "@/lib/mock-data";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -24,21 +26,17 @@ export default function Home() {
                 "Não avaliamos apenas o restaurante. Avaliamos a estrela da companhia. Os sabores que definem uma era."
               </p>
             </div>
-            <button className="text-sm font-black uppercase tracking-widest border-b-2 border-primary pb-2 hover:text-primary transition-colors">
+            <Link href="/top-dishes" className="text-sm font-black uppercase tracking-widest border-b-2 border-primary pb-2 hover:text-primary transition-colors">
               Rankings Completos
-            </button>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {[
-              { name: "Mousse de Chocolate", restaurant: "Tasca do Zé", city: "Lisboa", rating: 4.8, img: "/images/mousse.png" },
-              { name: "Carbonara Autêntica", restaurant: "Mamamia", city: "Corroios", rating: 4.5, img: "/images/carbonara.png" },
-              { name: "Pastel de Nata", restaurant: "Padaria Lisboa Doce", city: "Lisboa", rating: 4.9, img: "/images/pastelnata.png" }
-            ].map((dish, idx) => (
-              <div key={idx} className="group cursor-pointer">
+            {TOP_DISHES.map((dish, idx) => (
+              <Link key={idx} href={`/dish/${dish.id}`} className="group cursor-pointer">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-[3rem] mb-8 shadow-xl">
                   <img
-                    src={dish.img}
+                    src={dish.image}
                     alt={dish.name}
                     className="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-110"
                   />
@@ -48,7 +46,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-3xl font-bold mb-1 group-hover:text-primary transition-colors">{dish.name}</h3>
                 <p className="text-xs text-muted-foreground uppercase tracking-[0.2em] font-black">{dish.restaurant} • {dish.city}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -56,3 +54,4 @@ export default function Home() {
     </main>
   );
 }
+
