@@ -173,7 +173,7 @@ export const DISHES: Dish[] = [
         category: "main",
         rating: 4.7,
         image: "/images/chanfana.png",
-        description: "Carne tenra cozinhada lentamente em vinho tinto e especiarias da serra.",
+        description: "Extremamente Exclusivo. Só por convite e apenas é servido uma vez por ano. Carne tenra cozinhada lentamente em vinho tinto e especiarias da serra.",
     },
 ];
 
