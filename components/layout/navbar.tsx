@@ -58,18 +58,16 @@ export const Navbar = ({ className }: { className?: string }) => {
                             />
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-xl md:text-2xl font-black tracking-tighter uppercase whitespace-nowrap leading-none flex items-center text-primary">
-                                LEBREBITE<span className="relative">
-                                    S
-                                    {/* Bite Mark - Refined Jagged Shape */}
-                                    <svg viewBox="0 0 10 10" className="absolute -top-[2px] -right-[2px] w-4 h-4 fill-white dark:fill-zinc-950 pointer-events-none">
-                                        <path d="M10 0 C 8 0, 7 2, 5 1 C 3 0, 2 2, 0 0 L 10 0 Z" />
-                                        <circle cx="2" cy="1" r="1.5" />
-                                        <circle cx="5" cy="2" r="1.8" />
-                                        <circle cx="8" cy="1.2" r="1.5" />
-                                    </svg>
-                                </span>
-                            </span>
+                            <div className="relative h-6 md:h-8 w-auto">
+                                <Image
+                                    src="/images/SVG/lebrebites-typo.svg"
+                                    alt="LEBREBITES"
+                                    width={240}
+                                    height={40}
+                                    className="h-full w-auto object-contain"
+                                    priority
+                                />
+                            </div>
                         </div>
                     </Link>
 
@@ -110,17 +108,15 @@ export const Navbar = ({ className }: { className?: string }) => {
                 >
                     <div className="flex justify-between items-center mb-20">
                         <div className="flex flex-col">
-                            <span className="text-2xl font-black tracking-tighter uppercase whitespace-nowrap leading-none flex items-center text-primary">
-                                LEBREBITE<span className="relative">
-                                    S
-                                    <svg viewBox="0 0 10 10" className="absolute -top-[3px] -right-[3px] w-5 h-5 fill-white dark:fill-zinc-950 pointer-events-none">
-                                        <path d="M10 0 C 8 0, 7 2, 5 1 C 3 0, 2 2, 0 0 L 10 0 Z" />
-                                        <circle cx="2" cy="1" r="1.5" />
-                                        <circle cx="5" cy="2" r="1.8" />
-                                        <circle cx="8" cy="1.2" r="1.5" />
-                                    </svg>
-                                </span>
-                            </span>
+                            <div className="relative h-10 w-auto">
+                                <Image
+                                    src="/images/SVG/lebrebites-typo.svg"
+                                    alt="LEBREBITES"
+                                    width={300}
+                                    height={50}
+                                    className="h-full w-auto object-contain"
+                                />
+                            </div>
                         </div>
                         <button onClick={toggleMenu} className="p-4 rounded-full bg-secondary">
                             <X className="w-8 h-8 text-primary" />
