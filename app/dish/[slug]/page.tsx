@@ -108,10 +108,9 @@ export default function DishDetailPage({ params }: { params: { slug: string } })
                         </div>
 
                         <p className="text-2xl text-muted-foreground leading-relaxed font-medium">
-                            A {dish.name} do {dish.restaurant} não é apenas uma sobremesa, é uma obra de arte gastronómica.
-                            Utilizando técnicas ancestrais e ingredientes de origem controlada, o chef consegue
-                            um equilíbrio perfeito entre textura e sabor. Um prato obrigatório para qualquer
-                            aficionado por gastronomia de elite.
+                            {dish.description} Esta especialidade do {dish.restaurant} é uma verdadeira obra de arte gastronómica.
+                            Utilizando ingredientes de origem controlada e técnicas que respeitam a tradição,
+                            consegue um equilíbrio perfeito que define o padrão de excelência da nossa crítica.
                         </p>
 
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-16 border-t border-black/5 mt-16">
