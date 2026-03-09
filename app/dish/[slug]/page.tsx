@@ -6,7 +6,7 @@ import Link from "next/link";
 import { RabbitTeethRating } from "@/components/ui/rabbit-teeth-rating";
 import { gsap, useGSAP } from "@/lib/gsap-setup";
 import { Button } from "@/components/ui/button";
-import { MapPin, Utensils, Award, Share2, Bookmark, ArrowLeft, Phone } from "lucide-react";
+import { MapPin, Utensils, Award, Share2, Bookmark, ArrowLeft, Phone, Lock } from "lucide-react";
 import { TOP_DISHES, RESTAURANTS } from "@/lib/mock-data";
 
 export default function DishDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -158,7 +158,25 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
 
                 {/* Info Sidebar */}
                 <div className="lg:col-span-4 space-y-8">
-                    <div className="p-8 rounded-[2.5rem] bg-zinc-950 text-white space-y-8 sticky top-32">
+                    <div className="p-8 rounded-[2.5rem] bg-zinc-950 text-white space-y-8 sticky top-32 overflow-hidden relative group">
+                        {RESTAURANTS.find(r => r.id === dish.restaurantId)?.isExclusive && (
+                            <div className="absolute inset-0 z-50 bg-black/80 backdrop-blur-md flex flex-col items-center justify-center p-8 text-center space-y-6">
+                                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
+                                    <Lock className="w-8 h-8 text-primary" />
+                                </div>
+                                <div className="space-y-2">
+                                    <h4 className="text-xl font-black uppercase tracking-tighter">Acesso Restrito</h4>
+                                    <p className="text-sm text-zinc-400 font-serif italic">Subscreve o Guia Premium para aceder aos detalhes de reserva deste prato.</p>
+                                </div>
+                                <div className="space-y-4 w-full">
+                                    <Button className="w-full h-14 rounded-full bg-primary text-white font-black uppercase tracking-widest text-xs">
+                                        Subscrever - 15€/mês
+                                    </Button>
+                                    <p className="text-[10px] text-zinc-600 uppercase tracking-widest font-black">Conteúdo Ultra-Exclusivo</p>
+                                </div>
+                            </div>
+                        )}
+
                         <div className="space-y-4">
                             <h3 className="text-xl font-bold uppercase tracking-widest text-primary italic">Reserva já</h3>
                             <p className="text-zinc-400">Este restaurante é muito concorrido. Recomendamos reservar com antecedência.</p>
