@@ -249,7 +249,7 @@ export const DISHES: Dish[] = [
     {
         id: "d7",
         restaurantId: "r_sushi_come",
-        name: "Sashimi de Peixe Pargo com Coentros",
+        name: "Sashimi de Peixe Pargo",
         category: "main",
         rating: 4.8,
         image: "/images/sashimi_pargo.png",
