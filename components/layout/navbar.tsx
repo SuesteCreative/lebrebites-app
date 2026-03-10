@@ -54,23 +54,25 @@ export const Navbar = ({ className }: { className?: string }) => {
                             const tl = gsap.timeline();
                             tl.to(".rabbit-logo", {
                                 x: 180,
-                                y: -30,
-                                rotate: 20,
-                                duration: 0.4,
-                                ease: "power2.out"
+                                y: -45,
+                                rotate: 15,
+                                filter: "drop-shadow(0 20px 15px rgba(0,0,0,0.1)) brightness(1.1)",
+                                duration: 0.8,
+                                ease: "sine.inOut"
                             })
                                 .to(".rabbit-logo", {
-                                    x: 300,
+                                    x: 320,
                                     y: 0,
                                     rotate: 0,
-                                    duration: 0.4,
-                                    ease: "power2.in"
+                                    filter: "drop-shadow(0 0 0px rgba(0,0,0,0)) brightness(1)",
+                                    duration: 0.8,
+                                    ease: "sine.inOut"
                                 })
-                                .set(".rabbit-logo", { x: -50, opacity: 0 })
+                                .set(".rabbit-logo", { x: -60, opacity: 0 })
                                 .to(".rabbit-logo", {
                                     x: 0,
                                     opacity: 1,
-                                    duration: 0.3,
+                                    duration: 0.6,
                                     ease: "power2.out"
                                 });
                         }}
@@ -80,7 +82,7 @@ export const Navbar = ({ className }: { className?: string }) => {
                             alt="LebreBites Rabbit"
                             width={100}
                             height={100}
-                            className="rabbit-logo h-10 md:h-14 w-auto object-contain z-10"
+                            className="rabbit-logo h-10 md:h-14 w-auto object-contain z-10 drop-shadow-none"
                         />
                         <Image
                             src="/images/SVG/lebrebites-typo.svg"
