@@ -52,7 +52,7 @@ export const InviteSection = () => {
                         alt="Rabbit"
                         width={200}
                         height={200}
-                        className="w-32 h-32 md:w-48 md:h-48"
+                        className="w-32 h-32 md:w-48 md:h-48 grayscale opacity-20"
                     />
                 </div>
 
