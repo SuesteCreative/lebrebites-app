@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/sections/hero-section";
 import { LisbonReviewsSection } from "@/components/sections/lisbon-reviews";
 import { WorstDishesSection } from "@/components/sections/worst-dishes";
+import { InviteSection } from "@/components/sections/invite-section";
 import { LENDARY_DISHES, LENDARY_DESSERTS, TAKEOUT_AWARDS } from "@/lib/mock-data";
 import Link from "next/link";
 import { RabbitTeethRating } from "@/components/ui/rabbit-teeth-rating";
@@ -133,6 +134,7 @@ export default function Home() {
       </section>
 
       <WorstDishesSection />
+      <InviteSection />
     </main>
   );
 }
