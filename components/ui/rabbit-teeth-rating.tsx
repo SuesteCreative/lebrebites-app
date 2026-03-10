@@ -11,44 +11,44 @@ interface RabbitTeethRatingProps {
     showNumber?: boolean;
 }
 
-const Paw = ({ filled, half, className }: { filled: boolean; half?: boolean; className?: string }) => {
+const Paw = ({ fillAmount, className }: { fillAmount: number; className?: string }) => {
+    const id = React.useId();
+
     return (
         <div className={cn("relative inline-block", className)}>
-            {/* Background (Empty Paw) - More realistic elongated rabbit foot */}
             <svg
-                viewBox="0 0 24 24"
-                className="h-full w-full fill-zinc-200 dark:fill-zinc-800 transition-colors"
+                viewBox="0 0 24 32"
+                className="h-full w-full"
                 xmlns="http://www.w3.org/2000/svg"
             >
-                {/* Main elongated pad */}
-                <path d="M12 22C14.5 22 17 19.5 17 17C17 14.5 14.5 10 12 10C9.5 10 7 14.5 7 17C7 19.5 9.5 22 12 22Z" />
-                {/* Toes - elongated like a rabbit */}
-                <path d="M6 9C5 9 4 7 4 5C4 3 5 2 6 2C7 2 8 3 8 5C8 7 7 9 6 9Z" />
-                <path d="M10 7C9.2 7 8.5 5.5 8.5 4C8.5 2.5 9.2 1.5 10 1.5C10.8 1.5 11.5 2.5 11.5 4C11.5 5.5 10.8 7 10 7Z" />
-                <path d="M14 7C13.2 7 12.5 5.5 12.5 4C12.5 2.5 13.2 1.5 14 1.5C14.8 1.5 15.5 2.5 15.5 4C15.5 5.5 14.8 7 14 7Z" />
-                <path d="M18 9C17 9 16 7 16 5C16 3 17 2 18 2C19 2 20 3 20 5C20 7 19 9 18 9Z" />
-            </svg>
+                <defs>
+                    <clipPath id={`fill-clip-${id}`}>
+                        <rect x="0" y="0" width={`${fillAmount * 24}`} height="32" />
+                    </clipPath>
 
-            {/* Filled Overlay */}
-            {(filled || half) && (
-                <div
-                    className="absolute inset-0 overflow-hidden"
-                    style={{ width: half ? "50%" : "100%" }}
-                >
-                    <svg
-                        viewBox="0 0 24 24"
-                        className="h-full fill-primary text-primary"
-                        style={{ width: half ? "200%" : "100%" }}
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path d="M12 22C14.5 22 17 19.5 17 17C17 14.5 14.5 10 12 10C9.5 10 7 14.5 7 17C7 19.5 9.5 22 12 22Z" />
-                        <path d="M6 9C5 9 4 7 4 5C4 3 5 2 6 2C7 2 8 3 8 5C8 7 7 9 6 9Z" />
-                        <path d="M10 7C9.2 7 8.5 5.5 8.5 4C8.5 2.5 9.2 1.5 10 1.5C10.8 1.5 11.5 2.5 11.5 4C11.5 5.5 10.8 7 10 7Z" />
-                        <path d="M14 7C13.2 7 12.5 5.5 12.5 4C12.5 2.5 13.2 1.5 14 1.5C14.8 1.5 15.5 2.5 15.5 4C15.5 5.5 14.8 7 14 7Z" />
-                        <path d="M18 9C17 9 16 7 16 5C16 3 17 2 18 2C19 2 20 3 20 5C20 7 19 9 18 9Z" />
-                    </svg>
-                </div>
-            )}
+                    {/* Elongated Rabbit Foot Silhouette with cutouts (holes) */}
+                    <path
+                        id={`paw-shape-${id}`}
+                        fillRule="evenodd"
+                        d="M12 2C18 2 22 7 22 16C22 25 18 30 12 30C6 30 2 25 2 16C2 7 6 2 12 2ZM6 8C7.10457 8 8 7.10457 8 6C8 4.89543 7.10457 4 6 4C4.89543 4 4 4.89543 4 6C4 7.10457 4.89543 8 6 8ZM10 6C11.1046 6 12 5.10457 12 4C12 2.89543 11.1046 2 10 2C8.89543 2 8 2.89543 8 4C8 5.10457 8.89543 6 10 6ZM14 6C15.1046 6 16 5.10457 16 4C16 2.89543 15.1046 2 14 2C12.8954 2 12 2.89543 12 4C12 5.10457 12.8954 6 14 6ZM18 8C19.1046 8 20 7.10457 20 6C20 4.89543 19.1046 4 18 4C16.8954 4 16 4.89543 16 6C16 7.10457 16.8954 8 18 8ZM12 25C15.3137 25 18 22.3137 18 19C18 15.6863 15.3137 13 12 13C8.68629 13 6 15.6863 6 19C6 22.3137 8.68629 25 12 25Z"
+                    />
+                </defs>
+
+                {/* Empty State / Outline */}
+                <use
+                    href={`#paw-shape-${id}`}
+                    className="fill-zinc-100 dark:fill-zinc-900 stroke-zinc-300 dark:stroke-zinc-700 stroke-[1.5]"
+                    style={{ transition: "all 0.3s ease" }}
+                />
+
+                {/* Filled Overlay (Clipped) */}
+                <g clipPath={`url(#fill-clip-${id})`}>
+                    <use
+                        href={`#paw-shape-${id}`}
+                        className="fill-primary stroke-primary stroke-[1.5]"
+                    />
+                </g>
+            </svg>
         </div>
     );
 };
@@ -61,24 +61,22 @@ export const RabbitTeethRating: React.FC<RabbitTeethRatingProps> = ({
     showNumber = true,
 }) => {
     const sizeClasses = {
-        sm: "h-3.5 w-2 mx-[1px]",
-        md: "h-6 w-3.5 mx-[2px]",
-        lg: "h-8 w-5 mx-[3px]",
+        sm: "h-4 w-3 mx-[1px]",
+        md: "h-7 w-5 mx-[2px]",
+        lg: "h-10 w-7 mx-[3px]",
     };
 
     return (
         <div className={cn("inline-flex items-center", className)} aria-label={`Rating: ${rating} out of ${maxRating}`}>
             <div className="flex">
                 {Array.from({ length: maxRating }).map((_, i) => {
-                    const fullAmount = i + 1;
-                    const isFilled = rating >= fullAmount;
-                    const isHalf = !isFilled && rating >= fullAmount - 0.5;
+                    // Calculate fill amount for this specific slot (0 to 1)
+                    const fillAmount = Math.max(0, Math.min(1, rating - i));
 
                     return (
                         <Paw
                             key={i}
-                            filled={isFilled}
-                            half={isHalf}
+                            fillAmount={fillAmount}
                             className={sizeClasses[size]}
                         />
                     );
