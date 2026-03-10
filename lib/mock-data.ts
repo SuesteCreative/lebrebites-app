@@ -120,7 +120,7 @@ export const RESTAURANTS: Restaurant[] = [
         cuisine: "Japonesa",
         priceRange: "$$$",
         rating: 4.4,
-        image: "/images/carbonara.png",
+        image: "/images/koppu_ramen.png",
         description: "O melhor ramen artesanal da cidade.",
     },
     {
@@ -131,7 +131,7 @@ export const RESTAURANTS: Restaurant[] = [
         cuisine: "Petiscos de Autor",
         priceRange: "$$$",
         rating: 4.7,
-        image: "/images/hero_dish.png",
+        image: "/images/o_frade.png",
         description: "A alma alentejana servida ao balcão em Belém.",
     },
     {
@@ -142,7 +142,7 @@ export const RESTAURANTS: Restaurant[] = [
         cuisine: "Marisqueira",
         priceRange: "$$$$",
         rating: 4.3,
-        image: "/images/lisbon1.png",
+        image: "/images/marisqueira_rui.png",
         description: "Famosa pelos mariscos, mas com deslizes imperdoáveis nos básicos.",
     },
     {
@@ -153,7 +153,7 @@ export const RESTAURANTS: Restaurant[] = [
         cuisine: "Steakhouse & Fusion",
         priceRange: "$$$$",
         rating: 4.8,
-        image: "/images/lisbon2.png",
+        image: "/images/a_selva.png",
         description: "Uma selva urbana com sabores surpreendentes.",
     },
     {
@@ -164,7 +164,7 @@ export const RESTAURANTS: Restaurant[] = [
         cuisine: "Japonesa",
         priceRange: "$$$",
         rating: 4.4,
-        image: "/images/lisbon3.png",
+        image: "/images/sushi_come.png",
         description: "Surpreendente qualidade em regime delivery.",
     },
     {
@@ -175,7 +175,7 @@ export const RESTAURANTS: Restaurant[] = [
         cuisine: "Indiana",
         priceRange: "$$$",
         rating: 4.7,
-        image: "/images/butter_chicken.png",
+        image: "/images/butter_paradise.png",
         description: "O melhor caril da cidade na comodidade de sua casa.",
     },
     {
@@ -186,7 +186,7 @@ export const RESTAURANTS: Restaurant[] = [
         cuisine: "Pizza Artesanal",
         priceRange: "$$$",
         rating: 4.6,
-        image: "/images/lisbon1.png",
+        image: "/images/pizanni.png",
         description: "Massa fina e crocante que viaja bem.",
     },
 ];
