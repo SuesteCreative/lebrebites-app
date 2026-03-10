@@ -20,14 +20,14 @@ export const InviteSection = () => {
 
         // The Rabbit Jump Entrance
         tl.fromTo(rabbitRef.current,
-            { x: -200, y: 100, opacity: 0, rotate: -20 },
+            { x: -300, y: 200, opacity: 0, rotate: -40 },
             {
                 x: 0,
                 y: 0,
                 opacity: 1,
                 rotate: 0,
-                duration: 1.2,
-                ease: "back.out(1.7)"
+                duration: 1.5,
+                ease: "back.out(2)"
             }
         )
             // Elements follow
@@ -46,13 +46,13 @@ export const InviteSection = () => {
             <div className="max-w-7xl mx-auto relative">
 
                 {/* Jumping Rabbit Anchor */}
-                <div ref={rabbitRef} className="absolute -left-10 md:-left-20 -top-10 opacity-0 z-0">
+                <div ref={rabbitRef} className="absolute -left-10 md:-left-20 -top-10 opacity-0 z-10 pointer-events-none">
                     <Image
                         src="/images/SVG/lebrebites-rabbit2.svg"
                         alt="Rabbit"
                         width={200}
                         height={200}
-                        className="w-32 h-32 md:w-48 md:h-48 opacity-[0.03] filter grayscale"
+                        className="w-32 h-32 md:w-48 md:h-48 opacity-10 filter grayscale"
                     />
                 </div>
 
