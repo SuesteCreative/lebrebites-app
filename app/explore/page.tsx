@@ -9,6 +9,7 @@ import { gsap, useGSAP } from "@/lib/gsap-setup";
 import { Search, SlidersHorizontal, Map as MapIcon, Grid, List } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { ExploreMap } from "@/components/sections/explore-map";
 
 export default function ExplorePage() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -30,14 +31,6 @@ export default function ExplorePage() {
                 {/* Header & Personal Context */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
                     <div className="space-y-4">
-                        <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 rounded-full overflow-hidden border border-primary/20">
-                                <img src={CRITIC.avatar} alt={CRITIC.name} className="w-full h-full object-cover" />
-                            </div>
-                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">
-                                Guia por {CRITIC.name}
-                            </span>
-                        </div>
                         <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter">
                             O Meu <span className="text-primary italic">Mapa</span>
                         </h1>
@@ -139,6 +132,7 @@ export default function ExplorePage() {
                     ))}
                 </div>
             </div>
+            <ExploreMap />
         </div>
     );
 }

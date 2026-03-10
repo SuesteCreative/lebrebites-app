@@ -28,7 +28,7 @@ export default function TopDishesPage() {
                 <div className="flex flex-col md:flex-row justify-between items-baseline mb-16 gap-6">
                     <div className="space-y-4">
                         <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter">
-                            The <span className="text-primary italic">Elite</span> List
+                            Lista de <span className="text-primary italic">Elite</span>
                         </h1>
                         <p className="text-xl text-muted-foreground max-w-2xl">
                             Os pratos que definem a gastronomia contemporânea. Ordenados pelo rigor
