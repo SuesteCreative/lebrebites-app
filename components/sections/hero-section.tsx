@@ -76,9 +76,17 @@ export const HeroSection = () => {
                                 100% { background-position: 0% 50%; }
                             }
                             .animate-shifting-gradient {
-                                background: linear-gradient(-45deg, #4a0404, #9b111e, #6b0d0d, #b81c1c);
-                                background-size: 300% 300%;
-                                animation: gradientShift 5s ease infinite;
+                                background: linear-gradient(-45deg, 
+                                    #4a0404, 
+                                    #720e0e, 
+                                    #9b111e, 
+                                    #5c0a0a, 
+                                    #b81c1c, 
+                                    #3e0303, 
+                                    #820000
+                                );
+                                background-size: 400% 400%;
+                                animation: gradientShift 12s ease-in-out infinite;
                                 -webkit-background-clip: text;
                                 -webkit-text-fill-color: transparent;
                             }
