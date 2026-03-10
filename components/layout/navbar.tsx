@@ -82,14 +82,14 @@ export const Navbar = ({ className }: { className?: string }) => {
                             alt="LebreBites Rabbit"
                             width={100}
                             height={100}
-                            className="rabbit-logo h-10 md:h-14 w-auto object-contain z-10 drop-shadow-none"
+                            className="rabbit-logo h-12 md:h-16 w-auto object-contain z-10 drop-shadow-none"
                         />
                         <Image
                             src="/images/SVG/lebrebites-typo.svg"
                             alt="LEBREBITES"
                             width={240}
                             height={40}
-                            className="h-7 md:h-10 w-auto object-contain"
+                            className="h-6 md:h-8 w-auto object-contain"
                             priority
                         />
                     </Link>

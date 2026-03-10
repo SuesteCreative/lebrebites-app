@@ -41,7 +41,7 @@ export default function DishDetailPage({ params }: { params: Promise<{ slug: str
     return (
         <div ref={containerRef} className="min-h-screen bg-background pb-20">
             {/* Top Navigation */}
-            <div className="fixed top-24 left-6 md:left-20 z-50">
+            <div className="fixed top-32 left-6 md:left-20 z-50">
                 <Link
                     href="/top-dishes"
                     className="flex items-center gap-2 text-white/70 hover:text-white transition-colors font-black uppercase text-xs tracking-widest bg-black/50 backdrop-blur px-4 py-2 rounded-full"

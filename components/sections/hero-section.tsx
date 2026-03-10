@@ -97,10 +97,10 @@ export const HeroSection = () => {
                     </h1>
 
                     <div className="reveal-sub max-w-2xl mx-auto space-y-4">
-                        <p className="text-2xl md:text-3xl font-serif italic text-white/80">
+                        <p className="text-2xl md:text-3xl font-serif italic text-white/90 drop-shadow-md">
                             "Críticas para paladares exigentes"
                         </p>
-                        <p className="text-lg text-white/50 leading-relaxed font-medium">
+                        <p className="text-lg text-white/80 leading-relaxed font-medium drop-shadow-sm">
                             Descobre as pérolas escondidas e os pratos icónicos dos melhores chefs.
                             Onde cada detalhe, e cada dentinho, conta.
                         </p>
