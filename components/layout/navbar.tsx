@@ -47,28 +47,22 @@ export const Navbar = ({ className }: { className?: string }) => {
                 className
             )}>
                 <div className="flex items-center gap-12">
-                    <Link href="/" className="flex items-center gap-4 group">
-                        <div className="relative w-12 h-12 md:w-14 md:h-14 overflow-hidden rounded-xl md:rounded-2xl bg-white dark:bg-zinc-900 border border-black/5 flex items-center justify-center p-2 transition-transform duration-500 group-hover:scale-105">
-                            <Image
-                                src="/images/rabbit_only.png"
-                                alt="LebreBites Rabbit"
-                                width={100}
-                                height={100}
-                                className="object-contain"
-                            />
-                        </div>
-                        <div className="flex flex-col">
-                            <div className="relative h-6 md:h-8 w-auto">
-                                <Image
-                                    src="/images/SVG/lebrebites-typo.svg"
-                                    alt="LEBREBITES"
-                                    width={240}
-                                    height={40}
-                                    className="h-full w-auto object-contain"
-                                    priority
-                                />
-                            </div>
-                        </div>
+                    <Link href="/" className="flex items-center gap-2 group">
+                        <Image
+                            src="/images/SVG/lebrebites-rabbit.svg"
+                            alt="LebreBites Rabbit"
+                            width={100}
+                            height={100}
+                            className="h-7 md:h-9 w-auto object-contain transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <Image
+                            src="/images/SVG/lebrebites-typo.svg"
+                            alt="LEBREBITES"
+                            width={240}
+                            height={40}
+                            className="h-6 md:h-8 w-auto object-contain"
+                            priority
+                        />
                     </Link>
 
                     <div className="hidden lg:flex items-center gap-10 font-serif text-lg tracking-wide lowercase italic opacity-80">
@@ -107,16 +101,21 @@ export const Navbar = ({ className }: { className?: string }) => {
                     className="fixed inset-0 z-[200] bg-white dark:bg-zinc-950 flex flex-col p-12 translate-x-full opacity-0"
                 >
                     <div className="flex justify-between items-center mb-20">
-                        <div className="flex flex-col">
-                            <div className="relative h-10 w-auto">
-                                <Image
-                                    src="/images/SVG/lebrebites-typo.svg"
-                                    alt="LEBREBITES"
-                                    width={300}
-                                    height={50}
-                                    className="h-full w-auto object-contain"
-                                />
-                            </div>
+                        <div className="flex items-center gap-3">
+                            <Image
+                                src="/images/SVG/lebrebites-rabbit.svg"
+                                alt="LebreBites Rabbit"
+                                width={100}
+                                height={100}
+                                className="h-10 w-auto object-contain"
+                            />
+                            <Image
+                                src="/images/SVG/lebrebites-typo.svg"
+                                alt="LEBREBITES"
+                                width={300}
+                                height={50}
+                                className="h-8 w-auto object-contain"
+                            />
                         </div>
                         <button onClick={toggleMenu} className="p-4 rounded-full bg-secondary">
                             <X className="w-8 h-8 text-primary" />
