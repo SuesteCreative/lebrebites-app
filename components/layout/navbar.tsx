@@ -47,20 +47,47 @@ export const Navbar = ({ className }: { className?: string }) => {
                 className
             )}>
                 <div className="flex items-center gap-12">
-                    <Link href="/" className="flex items-center gap-2 group">
+                    <Link
+                        href="/"
+                        className="flex items-center gap-2 group logo-container relative px-2 py-1"
+                        onMouseEnter={() => {
+                            const tl = gsap.timeline();
+                            tl.to(".rabbit-logo", {
+                                x: 180,
+                                y: -30,
+                                rotate: 20,
+                                duration: 0.4,
+                                ease: "power2.out"
+                            })
+                                .to(".rabbit-logo", {
+                                    x: 300,
+                                    y: 0,
+                                    rotate: 0,
+                                    duration: 0.4,
+                                    ease: "power2.in"
+                                })
+                                .set(".rabbit-logo", { x: -50, opacity: 0 })
+                                .to(".rabbit-logo", {
+                                    x: 0,
+                                    opacity: 1,
+                                    duration: 0.3,
+                                    ease: "power2.out"
+                                });
+                        }}
+                    >
                         <Image
                             src="/images/SVG/lebrebites-rabbit.svg"
                             alt="LebreBites Rabbit"
                             width={100}
                             height={100}
-                            className="h-7 md:h-9 w-auto object-contain transition-transform duration-500 group-hover:scale-110"
+                            className="rabbit-logo h-10 md:h-14 w-auto object-contain z-10"
                         />
                         <Image
                             src="/images/SVG/lebrebites-typo.svg"
                             alt="LEBREBITES"
                             width={240}
                             height={40}
-                            className="h-6 md:h-8 w-auto object-contain"
+                            className="h-7 md:h-10 w-auto object-contain"
                             priority
                         />
                     </Link>
