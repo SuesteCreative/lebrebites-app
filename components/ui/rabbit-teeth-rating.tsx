@@ -14,16 +14,18 @@ interface RabbitTeethRatingProps {
 const Paw = ({ filled, half, className }: { filled: boolean; half?: boolean; className?: string }) => {
     return (
         <div className={cn("relative inline-block", className)}>
-            {/* Background (Empty Paw) */}
+            {/* Background (Empty Paw) - More elongated rabbit foot */}
             <svg
                 viewBox="0 0 24 24"
                 className="h-full w-full fill-zinc-200 dark:fill-zinc-800 transition-colors"
             >
-                <ellipse cx="12" cy="16" rx="6" ry="5" />
-                <circle cx="7" cy="8" r="2.5" />
-                <circle cx="10.5" cy="5" r="2.5" />
-                <circle cx="14.5" cy="5" r="2.5" />
-                <circle cx="18" cy="8" r="2.5" />
+                {/* Main pad - more oval/elongated */}
+                <ellipse cx="12" cy="18" rx="5" ry="7" />
+                {/* Toes - higher and more spread out like a rabbit */}
+                <ellipse cx="6" cy="10" rx="1.8" ry="3.5" />
+                <ellipse cx="10" cy="6" rx="1.8" ry="4" />
+                <ellipse cx="14" cy="6" rx="1.8" ry="4" />
+                <ellipse cx="18" cy="10" rx="1.8" ry="3.5" />
             </svg>
 
             {/* Filled Overlay */}
@@ -37,11 +39,11 @@ const Paw = ({ filled, half, className }: { filled: boolean; half?: boolean; cla
                         className="h-full fill-primary"
                         style={{ width: half ? "200%" : "100%" }}
                     >
-                        <ellipse cx="12" cy="16" rx="6" ry="5" />
-                        <circle cx="7" cy="8" r="2.5" />
-                        <circle cx="10.5" cy="5" r="2.5" />
-                        <circle cx="14.5" cy="5" r="2.5" />
-                        <circle cx="18" cy="8" r="2.5" />
+                        <ellipse cx="12" cy="18" rx="5" ry="7" />
+                        <ellipse cx="6" cy="10" rx="1.8" ry="3.5" />
+                        <ellipse cx="10" cy="6" rx="1.8" ry="4" />
+                        <ellipse cx="14" cy="6" rx="1.8" ry="4" />
+                        <ellipse cx="18" cy="10" rx="1.8" ry="3.5" />
                     </svg>
                 </div>
             )}

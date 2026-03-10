@@ -168,15 +168,15 @@ export const RESTAURANTS: Restaurant[] = [
         description: "Surpreendente qualidade em regime delivery.",
     },
     {
-        id: "r_burger_king",
-        name: "Burger King",
-        slug: "burger-king",
-        city: "Nacional (Glovo)",
-        cuisine: "Fast Food",
+        id: "r_butter_paradise",
+        name: "Butter Paradise",
+        slug: "butter-paradise",
+        city: "Lisboa (Glovo)",
+        cuisine: "Indiana",
         priceRange: "$$$",
-        rating: 3.8,
-        image: "/images/hero_dish.png",
-        description: "O rei do grelhado na chama, direto para o sofá.",
+        rating: 4.7,
+        image: "/images/butter_chicken.png",
+        description: "O melhor caril da cidade na comodidade de sua casa.",
     },
     {
         id: "r_pizanni",
@@ -225,7 +225,7 @@ export const DISHES: Dish[] = [
         name: "Bacalhau à Brás Clássico",
         category: "main",
         rating: 4.6,
-        image: "/images/lisbon1.png",
+        image: "/images/bacalhau_bras.png",
         description: "O ponto perfeito entre a cremosidade do ovo e o estaladiço da batata.",
     },
     {
@@ -234,7 +234,7 @@ export const DISHES: Dish[] = [
         name: "Cheesecake de Pistácio",
         category: "dessert",
         rating: 4.9,
-        image: "/images/lisbon2.png",
+        image: "/images/pistachio_cheesecake.png",
         description: "Uma explosão de pistácio numa base cremosa e envolvente.",
     },
     {
@@ -243,7 +243,7 @@ export const DISHES: Dish[] = [
         name: "Pudim Abade de Priscos",
         category: "dessert",
         rating: 4.7,
-        image: "/images/lisbon3.png",
+        image: "/images/abade_priscos.png",
         description: "A textura sedosa com o toque de presunto que o torna único.",
     },
     {
@@ -252,17 +252,17 @@ export const DISHES: Dish[] = [
         name: "Sashimi de Peixe Pargo com Coentros",
         category: "main",
         rating: 4.8,
-        image: "/images/lisbon1.png",
+        image: "/images/sashimi_pargo.png",
         description: "Frescura absoluta com um toque lusitano de coentros.",
     },
     {
         id: "d8",
-        restaurantId: "r_burger_king",
-        name: "Whopper com Bacon",
+        restaurantId: "r_butter_paradise",
+        name: "Butter Chicken Signature",
         category: "main",
-        rating: 4.1,
-        image: "/images/hero_dish.png",
-        description: "O clássico que nunca falha naquelas noites de preguiça.",
+        rating: 4.7,
+        image: "/images/butter_chicken.png",
+        description: "O equilíbrio perfeito entre especiarias, manteiga e cremosidade.",
     },
     {
         id: "d9",
@@ -270,7 +270,7 @@ export const DISHES: Dish[] = [
         name: "Pizza Diavola",
         category: "main",
         rating: 4.5,
-        image: "/images/lisbon2.png",
+        image: "/images/pizza_diavola.png",
         description: "Picante na medida certa, com salame de qualidade superior.",
     },
 ];
@@ -289,7 +289,7 @@ export const LENDARY_DESSERTS: TopDish[] = [
 
 export const TAKEOUT_AWARDS: TopDish[] = [
     { ...DISHES[6], restaurant: "Sushi Come", city: "Uber Eats" },
-    { ...DISHES[7], restaurant: "Burger King", city: "Glovo" },
+    { ...DISHES[7], restaurant: "Butter Paradise", city: "Glovo" },
     { ...DISHES[8], restaurant: "Pizanni", city: "Glovo" },
 ];
 
