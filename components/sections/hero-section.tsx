@@ -69,7 +69,21 @@ export const HeroSection = () => {
                         <span className="reveal-title text-5xl md:text-8xl lg:text-[11rem] font-black tracking-tight leading-none uppercase">
                             Gastronomia
                         </span>
-                        <span className="reveal-title text-5xl md:text-8xl lg:text-[11rem] font-black tracking-tight leading-none uppercase text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-white/30 italic -mt-4">
+                        <style jsx>{`
+                            @keyframes gradientShift {
+                                0% { background-position: 0% 50%; }
+                                50% { background-position: 100% 50%; }
+                                100% { background-position: 0% 50%; }
+                            }
+                            .animate-shifting-gradient {
+                                background: linear-gradient(-45deg, #4a0404, #9b111e, #6b0d0d, #b81c1c);
+                                background-size: 300% 300%;
+                                animation: gradientShift 5s ease infinite;
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                            }
+                        `}</style>
+                        <span className="reveal-title text-5xl md:text-8xl lg:text-[11rem] font-black tracking-tight leading-none uppercase italic animate-shifting-gradient -mt-4">
                             Exigente
                         </span>
                     </h1>
@@ -101,15 +115,15 @@ export const HeroSection = () => {
                 {/* Coordinated Stats */}
                 <div className="grid grid-cols-3 gap-12 pt-16 border-t border-white/10 max-w-3xl mx-auto">
                     <div className="reveal-stats">
-                        <span className="block text-3xl font-black text-white">50k+</span>
+                        <span className="block text-3xl font-black text-white">500</span>
                         <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/40">Foodies</span>
                     </div>
                     <div className="reveal-stats">
-                        <span className="block text-3xl font-black text-white">2.5k</span>
+                        <span className="block text-3xl font-black text-white">120</span>
                         <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/40">Restaurantes</span>
                     </div>
                     <div className="reveal-stats">
-                        <span className="block text-3xl font-black text-white">15k</span>
+                        <span className="block text-3xl font-black text-white">312</span>
                         <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/40">Pratos</span>
                     </div>
                 </div>

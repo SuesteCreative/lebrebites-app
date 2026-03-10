@@ -56,7 +56,7 @@ export const LisbonReviewsSection = () => {
                             <span className="text-xs font-black uppercase tracking-[0.4em] text-primary">Curadoria Local</span>
                         </div>
                         <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter">
-                            Lisboa <span className="text-primary italic">Secret</span>
+                            Lisboa <span className="text-primary italic">Secreta</span>
                         </h2>
                         <p className="text-xl text-muted-foreground max-w-xl font-serif italic">
                             "Os melhores roteiros gastronómicos na capital, selecionados por quem não aceita menos que a perfeição."

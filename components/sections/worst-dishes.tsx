@@ -5,6 +5,7 @@ import Link from "next/link";
 import { WORST_DISHES, RESTAURANTS } from "@/lib/mock-data";
 import { gsap, useGSAP } from "@/lib/gsap-setup";
 import { ThumbsDown } from "lucide-react";
+import { RabbitTeethRating } from "@/components/ui/rabbit-teeth-rating";
 
 export const WorstDishesSection = () => {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -60,8 +61,8 @@ export const WorstDishesSection = () => {
                                         alt={dish.name}
                                         className="object-cover w-full h-full opacity-80 transition-transform duration-1000 group-hover:scale-110 group-hover:opacity-100"
                                     />
-                                    <div className="absolute top-6 right-6 bg-red-600 px-4 py-2 rounded-full text-[10px] font-black text-white shadow-lg">
-                                        {dish.rating} 🐰
+                                    <div className="absolute top-6 right-6 bg-zinc-950/60 backdrop-blur px-4 py-2 rounded-full shadow-lg">
+                                        <RabbitTeethRating rating={dish.rating} size="sm" showNumber={true} className="text-red-500" />
                                     </div>
                                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60" />
                                 </div>

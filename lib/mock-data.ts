@@ -145,6 +145,50 @@ export const RESTAURANTS: Restaurant[] = [
         image: "/images/lisbon1.png",
         description: "Famosa pelos mariscos, mas com deslizes imperdoáveis nos básicos.",
     },
+    {
+        id: "r_selva",
+        name: "A Selva",
+        slug: "a-selva",
+        city: "Barcelona",
+        cuisine: "Steakhouse & Fusion",
+        priceRange: "$$$$",
+        rating: 4.8,
+        image: "/images/lisbon2.png",
+        description: "Uma selva urbana com sabores surpreendentes.",
+    },
+    {
+        id: "r_sushi_come",
+        name: "Sushi Come",
+        slug: "sushi-come",
+        city: "Lisboa (Uber Eats)",
+        cuisine: "Japonesa",
+        priceRange: "$$$",
+        rating: 4.4,
+        image: "/images/lisbon3.png",
+        description: "Surpreendente qualidade em regime delivery.",
+    },
+    {
+        id: "r_burger_king",
+        name: "Burger King",
+        slug: "burger-king",
+        city: "Nacional (Glovo)",
+        cuisine: "Fast Food",
+        priceRange: "$$$",
+        rating: 3.8,
+        image: "/images/hero_dish.png",
+        description: "O rei do grelhado na chama, direto para o sofá.",
+    },
+    {
+        id: "r_pizanni",
+        name: "Pizanni",
+        slug: "pizanni",
+        city: "Lisboa (Glovo)",
+        cuisine: "Pizza Artesanal",
+        priceRange: "$$$",
+        rating: 4.6,
+        image: "/images/lisbon1.png",
+        description: "Massa fina e crocante que viaja bem.",
+    },
 ];
 
 export const DISHES: Dish[] = [
@@ -175,6 +219,78 @@ export const DISHES: Dish[] = [
         image: "/images/chanfana.png",
         description: "Extremamente Exclusivo. Só por convite e apenas é servido uma vez por ano. Carne tenra cozinhada lentamente em vinho tinto e especiarias da serra.",
     },
+    {
+        id: "d4",
+        restaurantId: "r1",
+        name: "Bacalhau à Brás Clássico",
+        category: "main",
+        rating: 4.6,
+        image: "/images/lisbon1.png",
+        description: "O ponto perfeito entre a cremosidade do ovo e o estaladiço da batata.",
+    },
+    {
+        id: "d5",
+        restaurantId: "r_selva",
+        name: "Cheesecake de Pistácio",
+        category: "dessert",
+        rating: 4.9,
+        image: "/images/lisbon2.png",
+        description: "Uma explosão de pistácio numa base cremosa e envolvente.",
+    },
+    {
+        id: "d6",
+        restaurantId: "r4",
+        name: "Pudim Abade de Priscos",
+        category: "dessert",
+        rating: 4.7,
+        image: "/images/lisbon3.png",
+        description: "A textura sedosa com o toque de presunto que o torna único.",
+    },
+    {
+        id: "d7",
+        restaurantId: "r_sushi_come",
+        name: "Sashimi de Peixe Pargo com Coentros",
+        category: "main",
+        rating: 4.8,
+        image: "/images/lisbon1.png",
+        description: "Frescura absoluta com um toque lusitano de coentros.",
+    },
+    {
+        id: "d8",
+        restaurantId: "r_burger_king",
+        name: "Whopper com Bacon",
+        category: "main",
+        rating: 4.1,
+        image: "/images/hero_dish.png",
+        description: "O clássico que nunca falha naquelas noites de preguiça.",
+    },
+    {
+        id: "d9",
+        restaurantId: "r_pizanni",
+        name: "Pizza Diavola",
+        category: "main",
+        rating: 4.5,
+        image: "/images/lisbon2.png",
+        description: "Picante na medida certa, com salame de qualidade superior.",
+    },
+];
+
+export const LENDARY_DISHES: TopDish[] = [
+    { ...DISHES[1], restaurant: "Restaurante Mamamia", city: "Corroios" },
+    { ...DISHES[2], restaurant: "Os Sogros", city: "Algarve" },
+    { ...DISHES[3], restaurant: "Restaurante Os Amigos", city: "Lisboa" },
+];
+
+export const LENDARY_DESSERTS: TopDish[] = [
+    { ...DISHES[0], restaurant: "Restaurante Os Amigos", city: "Lisboa" },
+    { ...DISHES[4], restaurant: "A Selva", city: "Barcelona" },
+    { ...DISHES[5], restaurant: "O Nobre", city: "Lisboa" },
+];
+
+export const TAKEOUT_AWARDS: TopDish[] = [
+    { ...DISHES[6], restaurant: "Sushi Come", city: "Uber Eats" },
+    { ...DISHES[7], restaurant: "Burger King", city: "Glovo" },
+    { ...DISHES[8], restaurant: "Pizanni", city: "Glovo" },
 ];
 
 export const WORST_DISHES: Dish[] = [

@@ -11,16 +11,19 @@ interface RabbitTeethRatingProps {
     showNumber?: boolean;
 }
 
-const Tooth = ({ filled, half, className }: { filled: boolean; half?: boolean; className?: string }) => {
+const Paw = ({ filled, half, className }: { filled: boolean; half?: boolean; className?: string }) => {
     return (
         <div className={cn("relative inline-block", className)}>
-            {/* Background (Empty Tooth) - Refined Rounded Rectangle */}
+            {/* Background (Empty Paw) */}
             <svg
                 viewBox="0 0 24 24"
                 className="h-full w-full fill-zinc-200 dark:fill-zinc-800 transition-colors"
             >
-                <rect x="6" y="2" width="12" height="18" rx="2" />
-                <path d="M6 16c0 2 3 4 6 4s6-2 6-4" fill="none" strokeWidth="1" className="stroke-zinc-300 dark:stroke-zinc-700" />
+                <ellipse cx="12" cy="16" rx="6" ry="5" />
+                <circle cx="7" cy="8" r="2.5" />
+                <circle cx="10.5" cy="5" r="2.5" />
+                <circle cx="14.5" cy="5" r="2.5" />
+                <circle cx="18" cy="8" r="2.5" />
             </svg>
 
             {/* Filled Overlay */}
@@ -31,10 +34,14 @@ const Tooth = ({ filled, half, className }: { filled: boolean; half?: boolean; c
                 >
                     <svg
                         viewBox="0 0 24 24"
-                        className="h-full w-[100/width] fill-primary"
+                        className="h-full fill-primary"
                         style={{ width: half ? "200%" : "100%" }}
                     >
-                        <rect x="6" y="2" width="12" height="18" rx="2" />
+                        <ellipse cx="12" cy="16" rx="6" ry="5" />
+                        <circle cx="7" cy="8" r="2.5" />
+                        <circle cx="10.5" cy="5" r="2.5" />
+                        <circle cx="14.5" cy="5" r="2.5" />
+                        <circle cx="18" cy="8" r="2.5" />
                     </svg>
                 </div>
             )}
@@ -64,7 +71,7 @@ export const RabbitTeethRating: React.FC<RabbitTeethRatingProps> = ({
                     const isHalf = !isFilled && rating >= fullAmount - 0.5;
 
                     return (
-                        <Tooth
+                        <Paw
                             key={i}
                             filled={isFilled}
                             half={isHalf}
