@@ -78,7 +78,7 @@ export const Navbar = ({ className }: { className?: string }) => {
                         }}
                     >
                         <Image
-                            src="/images/SVG/lebrebites-rabbit.svg"
+                            src="/images/SVG/lebrebites-rabbit2.svg"
                             alt="LebreBites Rabbit"
                             width={100}
                             height={100}
@@ -132,7 +132,7 @@ export const Navbar = ({ className }: { className?: string }) => {
                     <div className="flex justify-between items-center mb-20">
                         <div className="flex items-center gap-3">
                             <Image
-                                src="/images/SVG/lebrebites-rabbit.svg"
+                                src="/images/SVG/lebrebites-rabbit2.svg"
                                 alt="LebreBites Rabbit"
                                 width={100}
                                 height={100}

@@ -48,7 +48,7 @@ export const InviteSection = () => {
                 {/* Jumping Rabbit Anchor */}
                 <div ref={rabbitRef} className="absolute -left-10 md:-left-20 -top-10 opacity-0 z-0">
                     <Image
-                        src="/images/SVG/lebrebites-rabbit.svg"
+                        src="/images/SVG/lebrebites-rabbit2.svg"
                         alt="Rabbit"
                         width={200}
                         height={200}
